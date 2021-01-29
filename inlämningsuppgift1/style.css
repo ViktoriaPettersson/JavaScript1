@@ -1,0 +1,19 @@
+.register {
+    max-width: 40em;
+}
+.submit {
+    width: 100%;
+}
+.users {
+    border-bottom: 3px solid rgb(197, 197, 197);
+}
+.users h3, li, h1 {
+    color: rgb(80, 80, 80);
+}
+.error {
+    color: rgb(255, 0, 0);
+    font-size: 12px;
+}
+.output-btns button{
+    width: 5em;
+}

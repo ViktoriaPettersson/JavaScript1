@@ -1,0 +1,28 @@
+html, body {
+    margin: auto;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+.input {
+    max-width: 30em;
+    margin: auto;
+
+}
+.output {
+    margin: auto;
+    max-width: 30em;
+    margin-bottom: 1em;
+}
+#add-btn:hover {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    border: #ffffff;
+}
+.output-item {
+    padding: 0.5em;
+    border: 1px solid rgba(51, 51, 51, 0.219);
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.checked {
+    text-decoration: line-through;
+}
