@@ -24,15 +24,32 @@ const tdList = () => {
 
     output.innerHTML = ""
     todos.forEach(td => {
-    let html = `
+    let html=""
+    if(td.completed == false) {
+    html = `
     <div class="output container">
         <div id="output">
-            <div id="${td.id}" class="output-item">
-            <div class="title">${td.title}</div>
+            <div id="${td.id}" class="output-item d-flex justify-content-between align-items-center">
+                <div class="title">${td.title}</div>
+                <button class="btn btn-danger delete">X</button>
             </div>
         </div>
     </div>
     `    
+    }
+    else if (td.completed == true) {
+    html = `
+    <div class="output container">
+        <div id="output">
+            <div id="${td.id}" class="output-item d-flex justify-content-between align-items-center">
+                <div class="title checked">${td.title}</div>
+                <button class="btn btn-danger delete">X</button>
+            </div>
+        </div>
+    </div>
+    `    
+    }
+    
     output.innerHTML += html
     });
 
@@ -78,23 +95,19 @@ const validate = () => {
 output.addEventListener("click", e => {
  
   if(e.target.classList.contains("title"))
+  test(e.target.parentNode.id)
   
+})
+
+function test(id) {
   todos.forEach(t => {
    
-    if(t.id == e.target.parentNode.id && t.completed == false) 
+    if(t.id == id) 
     {
       // console.log(t.completed)
       t.completed = !t.completed
       // console.log(t.completed)
-      e.target.classList.add("checked")
+      tdList()
     }
-    else if(t.id == e.target.parentNode.id && t.completed == true) {
-      // console.log(t.completed)
-      t.completed = !t.completed
-      // console.log(t.completed)
-      e.target.classList.remove("checked")
-    }
-    console.log(todos)
   })
-
-})
+}
